@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /Library/Server/Web/Data/Sites/www.gangauthority.com/app/config/routing_dev.yml
