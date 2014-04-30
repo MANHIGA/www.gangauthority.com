@@ -1,0 +1,4 @@
+gang_authority_user:
+    resource: "@GangAuthorityUserBundle/Resources/config/routing.yml"
+    prefix:   /
+

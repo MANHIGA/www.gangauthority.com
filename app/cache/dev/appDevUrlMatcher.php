@@ -135,6 +135,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // gang_authority_user_homepage
+        if ($pathinfo === '/index') {
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'gang_authority_user_homepage',);
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
