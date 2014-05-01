@@ -140,6 +140,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'gang_authority_user_homepage',);
         }
 
+        // gang_authority_user_stats
+        if ($pathinfo === '/stats') {
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::statsAction',  '_route' => 'gang_authority_user_stats',);
+        }
+
+        // gang_authority_user_telechargement
+        if ($pathinfo === '/telechargement') {
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::telechargementAction',  '_route' => 'gang_authority_user_telechargement',);
+        }
+
+        // gang_authority_user_profile
+        if ($pathinfo === '/profile') {
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::profileAction',  '_route' => 'gang_authority_user_profile',);
+        }
+
+        // gang_authority_user_connexion
+        if ($pathinfo === '/connexion') {
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::connexionAction',  '_route' => 'gang_authority_user_connexion',);
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
