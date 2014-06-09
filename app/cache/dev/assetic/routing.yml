@@ -2,4 +2,8 @@ _assetic:
     resource: .
     type: assetic
 _app:
+<<<<<<< HEAD
     resource: 'C:/wamp/www/www.gangauthority.com-master/app/config/routing_dev.yml'
+=======
+    resource: 'C:/wamp/www/www.gangauthority.com/app/config/routing_dev.yml'
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133

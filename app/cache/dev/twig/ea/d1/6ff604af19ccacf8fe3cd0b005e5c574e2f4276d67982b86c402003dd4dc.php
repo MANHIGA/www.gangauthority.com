@@ -19,31 +19,54 @@ class __TwigTemplate_ead16ff604af19ccacf8fe3cd0b005e5c574e2f4276d67982b86c402003
         echo "<!-- START of Symfony2 Web Debug Toolbar -->
 ";
         // line 2
+<<<<<<< HEAD
         if (("normal" != $this->getContext($context, "position"))) {
             // line 3
             echo "    <div id=\"sfMiniToolbar-";
             echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+        if (("normal" != (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")))) {
+            // line 3
+            echo "    <div id=\"sfMiniToolbar-";
+            echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             echo "\" class=\"sf-minitoolbar\">
         <a href=\"javascript:void(0);\" title=\"Show Symfony toolbar\" onclick=\"
             var elem = this.parentNode;
             if (elem.style.display == 'none') {
                 document.getElementById('sfToolbarMainContent-";
             // line 7
+<<<<<<< HEAD
             echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
             echo "').style.display = 'none';
                 document.getElementById('sfToolbarClearer-";
             // line 8
             echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+            echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+            echo "').style.display = 'none';
+                document.getElementById('sfToolbarClearer-";
+            // line 8
+            echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             echo "').style.display = 'none';
                 elem.style.display = 'block';
             } else {
                 document.getElementById('sfToolbarMainContent-";
             // line 11
+<<<<<<< HEAD
             echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
             echo "').style.display = 'block';
                 document.getElementById('sfToolbarClearer-";
             // line 12
             echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+            echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+            echo "').style.display = 'block';
+                document.getElementById('sfToolbarClearer-";
+            // line 12
+            echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             echo "').style.display = 'block';
                 elem.style.display = 'none'
             }
@@ -56,12 +79,20 @@ class __TwigTemplate_ead16ff604af19ccacf8fe3cd0b005e5c574e2f4276d67982b86c402003
     <style>
         ";
             // line 22
+<<<<<<< HEAD
             $this->env->loadTemplate("@WebProfiler/Profiler/toolbar.css.twig")->display(array_merge($context, array("position" => $this->getContext($context, "position"), "floatable" => true)));
+=======
+            $this->env->loadTemplate("@WebProfiler/Profiler/toolbar.css.twig")->display(array_merge($context, array("position" => (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "floatable" => true)));
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             // line 23
             echo "    </style>
     <div id=\"sfToolbarClearer-";
             // line 24
+<<<<<<< HEAD
             echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+            echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             echo "\" style=\"clear: both; height: 38px;\"></div>
 ";
         }
@@ -69,16 +100,28 @@ class __TwigTemplate_ead16ff604af19ccacf8fe3cd0b005e5c574e2f4276d67982b86c402003
         echo "
 <div id=\"sfToolbarMainContent-";
         // line 27
+<<<<<<< HEAD
         echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
         echo "\" class=\"sf-toolbarreset\">
     ";
         // line 28
         $context['_parent'] = (array) $context;
+<<<<<<< HEAD
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "templates"));
         foreach ($context['_seq'] as $context["name"] => $context["template"]) {
             // line 29
             echo "        ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "template"), "renderblock", array(0 => "toolbar", 1 => array("collector" => $this->getAttribute($this->getContext($context, "profile"), "getcollector", array(0 => $this->getContext($context, "name")), "method"), "profiler_url" => $this->getContext($context, "profiler_url"), "token" => $this->getAttribute($this->getContext($context, "profile"), "token"), "name" => $this->getContext($context, "name"))), "method"), "html", null, true);
+=======
+        $context['_seq'] = twig_ensure_traversable((isset($context["templates"]) ? $context["templates"] : $this->getContext($context, "templates")));
+        foreach ($context['_seq'] as $context["name"] => $context["template"]) {
+            // line 29
+            echo "        ";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["template"]) ? $context["template"] : $this->getContext($context, "template")), "renderblock", array(0 => "toolbar", 1 => array("collector" => $this->getAttribute((isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "getcollector", array(0 => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name"))), "method"), "profiler_url" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")), "token" => $this->getAttribute((isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "token"), "name" => (isset($context["name"]) ? $context["name"] : $this->getContext($context, "name")))), "method"), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             // line 35
             echo "
     ";
@@ -90,7 +133,11 @@ class __TwigTemplate_ead16ff604af19ccacf8fe3cd0b005e5c574e2f4276d67982b86c402003
         echo "
     ";
         // line 38
+<<<<<<< HEAD
         if (("normal" != $this->getContext($context, "position"))) {
+=======
+        if (("normal" != (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")))) {
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             // line 39
             echo "        <a class=\"hide-button\" title=\"Close Toolbar\" onclick=\"
             var p = this.parentNode;
@@ -98,7 +145,11 @@ class __TwigTemplate_ead16ff604af19ccacf8fe3cd0b005e5c574e2f4276d67982b86c402003
             (p.previousElementSibling || p.previousSibling).style.display = 'none';
             document.getElementById('sfMiniToolbar-";
             // line 43
+<<<<<<< HEAD
             echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+            echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             echo "').style.display = 'block';
             Sfjs.setPreference('toolbar/displayState', 'none');
         \"></a>

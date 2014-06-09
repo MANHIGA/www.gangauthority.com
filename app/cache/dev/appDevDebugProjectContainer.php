@@ -279,7 +279,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAnnotationReaderService()
     {
+<<<<<<< HEAD
         return $this->services['annotation_reader'] = new \Doctrine\Common\Annotations\FileCacheReader(new \Doctrine\Common\Annotations\AnnotationReader(), 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/annotations', true);
+=======
+        return $this->services['annotation_reader'] = new \Doctrine\Common\Annotations\FileCacheReader(new \Doctrine\Common\Annotations\AnnotationReader(), 'C:/wamp/www/www.gangauthority.com/app/cache/dev/annotations', true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -292,9 +296,15 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_AssetManagerService()
     {
+<<<<<<< HEAD
         $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig')), new \Assetic\Cache\ConfigCache('C:/wamp/www/www.gangauthority.com-master/app/cache/dev/assetic/config'), true)));
 
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($this->get('templating.loader'), '', 'C:/wamp/www/www.gangauthority.com-master/app/Resources/views', '/\\.[^.]+\\.twig$/'), 'twig');
+=======
+        $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig')), new \Assetic\Cache\ConfigCache('C:/wamp/www/www.gangauthority.com/app/cache/dev/assetic/config'), true)));
+
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($this->get('templating.loader'), '', 'C:/wamp/www/www.gangauthority.com/app/Resources/views', '/\\.[^.]+\\.twig$/'), 'twig');
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
 
         return $instance;
     }
@@ -380,7 +390,11 @@ class appDevDebugProjectContainer extends Container
         $a = $this->get('kernel');
         $b = $this->get('templating.filename_parser');
 
+<<<<<<< HEAD
         $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, 'C:/wamp/www/www.gangauthority.com-master/app/Resources');
+=======
+        $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, 'C:/wamp/www/www.gangauthority.com/app/Resources');
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
 
         return $this->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(array(0 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer($c, $this->get('templating.locator')), 1 => new \Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer($this), 2 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer($this->get('router')), 3 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheCacheWarmer($this, $c), 4 => new \Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer($this->get('doctrine'))));
     }
@@ -604,6 +618,7 @@ class appDevDebugProjectContainer extends Container
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
         $a = new \Doctrine\Common\Cache\ArrayCache();
+<<<<<<< HEAD
         $a->setNamespace('sf2orm_default_72f7b3fd80bdae134ec5559a4b3232d61cb23011c6a8cc8e44ed902b5161d022');
 
         $b = new \Doctrine\Common\Cache\ArrayCache();
@@ -629,6 +644,30 @@ class appDevDebugProjectContainer extends Container
         $e->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
 
         $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $e);
+=======
+        $a->setNamespace('sf2orm_default_1d663b245900c1a9a107d0be5bed361284f9100c3526c6ad3884c0b1b15ce3d3');
+
+        $b = new \Doctrine\Common\Cache\ArrayCache();
+        $b->setNamespace('sf2orm_default_1d663b245900c1a9a107d0be5bed361284f9100c3526c6ad3884c0b1b15ce3d3');
+
+        $c = new \Doctrine\Common\Cache\ArrayCache();
+        $c->setNamespace('sf2orm_default_1d663b245900c1a9a107d0be5bed361284f9100c3526c6ad3884c0b1b15ce3d3');
+
+        $d = new \Doctrine\ORM\Configuration();
+        $d->setEntityNamespaces(array());
+        $d->setMetadataCacheImpl($a);
+        $d->setQueryCacheImpl($b);
+        $d->setResultCacheImpl($c);
+        $d->setMetadataDriverImpl(new \Doctrine\ORM\Mapping\Driver\DriverChain());
+        $d->setProxyDir('C:/wamp/www/www.gangauthority.com/app/cache/dev/doctrine/orm/Proxies');
+        $d->setProxyNamespace('Proxies');
+        $d->setAutoGenerateProxyClasses(true);
+        $d->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $d->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $d->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
+
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $d);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
@@ -684,7 +723,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getFileLocatorService()
     {
+<<<<<<< HEAD
         return $this->services['file_locator'] = new \Symfony\Component\HttpKernel\Config\FileLocator($this->get('kernel'), 'C:/wamp/www/www.gangauthority.com-master/app/Resources');
+=======
+        return $this->services['file_locator'] = new \Symfony\Component\HttpKernel\Config\FileLocator($this->get('kernel'), 'C:/wamp/www/www.gangauthority.com/app/Resources');
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -1436,7 +1479,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getMonolog_Handler_MainService()
     {
+<<<<<<< HEAD
         return $this->services['monolog.handler.main'] = new \Monolog\Handler\StreamHandler('C:/wamp/www/www.gangauthority.com-master/app/logs/dev.log', 100, true);
+=======
+        return $this->services['monolog.handler.main'] = new \Monolog\Handler\StreamHandler('C:/wamp/www/www.gangauthority.com/app/logs/dev.log', 100, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -1631,7 +1678,11 @@ class appDevDebugProjectContainer extends Container
         $d = new \Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector($this->get('doctrine'));
         $d->addLogger('default', $this->get('doctrine.dbal.logger.profiling.default'));
 
+<<<<<<< HEAD
         $this->services['profiler'] = $instance = new \Symfony\Component\HttpKernel\Profiler\Profiler(new \Symfony\Component\HttpKernel\Profiler\FileProfilerStorage('file:C:/wamp/www/www.gangauthority.com-master/app/cache/dev/profiler', '', '', 86400), $a);
+=======
+        $this->services['profiler'] = $instance = new \Symfony\Component\HttpKernel\Profiler\Profiler(new \Symfony\Component\HttpKernel\Profiler\FileProfilerStorage('file:C:/wamp/www/www.gangauthority.com/app/cache/dev/profiler', '', '', 86400), $a);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
 
         $instance->add($c);
         $instance->add($this->get('data_collector.request'));
@@ -1729,7 +1780,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getRouterService()
     {
+<<<<<<< HEAD
         return $this->services['router'] = new \Symfony\Bundle\FrameworkBundle\Routing\Router($this, 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/assetic/routing.yml', array('cache_dir' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev', 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'appDevUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'appDevUrlMatcher', 'strict_requirements' => true), $this->get('router.request_context', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('monolog.logger.router', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+=======
+        return $this->services['router'] = new \Symfony\Bundle\FrameworkBundle\Routing\Router($this, 'C:/wamp/www/www.gangauthority.com/app/cache/dev/assetic/routing.yml', array('cache_dir' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev', 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'appDevUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'appDevUrlMatcher', 'strict_requirements' => true), $this->get('router.request_context', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('monolog.logger.router', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -1890,7 +1945,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_SecureRandomService()
     {
+<<<<<<< HEAD
         return $this->services['security.secure_random'] = new \Symfony\Component\Security\Core\Util\SecureRandom('C:/wamp/www/www.gangauthority.com-master/app/cache/dev/secure_random.seed', $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+=======
+        return $this->services['security.secure_random'] = new \Symfony\Component\Security\Core\Util\SecureRandom('C:/wamp/www/www.gangauthority.com/app/cache/dev/secure_random.seed', $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -1916,7 +1975,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSensioDistribution_WebconfiguratorService()
     {
+<<<<<<< HEAD
         return $this->services['sensio_distribution.webconfigurator'] = new \Sensio\Bundle\DistributionBundle\Configurator\Configurator('C:/wamp/www/www.gangauthority.com-master/app');
+=======
+        return $this->services['sensio_distribution.webconfigurator'] = new \Sensio\Bundle\DistributionBundle\Configurator\Configurator('C:/wamp/www/www.gangauthority.com/app');
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -2077,7 +2140,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSession_Storage_FilesystemService()
     {
+<<<<<<< HEAD
         return $this->services['session.storage.filesystem'] = new \Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage('C:/wamp/www/www.gangauthority.com-master/app/cache/dev/sessions', 'MOCKSESSID', $this->get('session.storage.metadata_bag'));
+=======
+        return $this->services['session.storage.filesystem'] = new \Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage('C:/wamp/www/www.gangauthority.com/app/cache/dev/sessions', 'MOCKSESSID', $this->get('session.storage.metadata_bag'));
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -2325,7 +2392,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTemplating_Helper_CodeService()
     {
+<<<<<<< HEAD
         return $this->services['templating.helper.code'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper(NULL, 'C:/wamp/www/www.gangauthority.com-master/app', 'UTF-8');
+=======
+        return $this->services['templating.helper.code'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper(NULL, 'C:/wamp/www/www.gangauthority.com/app', 'UTF-8');
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -2858,7 +2929,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTranslator_DefaultService()
     {
+<<<<<<< HEAD
         return $this->services['translator.default'] = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, $this->get('translator.selector'), array('translation.loader.php' => array(0 => 'php'), 'translation.loader.yml' => array(0 => 'yml'), 'translation.loader.xliff' => array(0 => 'xlf', 1 => 'xliff'), 'translation.loader.po' => array(0 => 'po'), 'translation.loader.mo' => array(0 => 'mo'), 'translation.loader.qt' => array(0 => 'ts'), 'translation.loader.csv' => array(0 => 'csv'), 'translation.loader.res' => array(0 => 'res'), 'translation.loader.dat' => array(0 => 'dat'), 'translation.loader.ini' => array(0 => 'ini'), 'translation.loader.json' => array(0 => 'json')), array('cache_dir' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/translations', 'debug' => true));
+=======
+        return $this->services['translator.default'] = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, $this->get('translator.selector'), array('translation.loader.php' => array(0 => 'php'), 'translation.loader.yml' => array(0 => 'yml'), 'translation.loader.xliff' => array(0 => 'xlf', 1 => 'xliff'), 'translation.loader.po' => array(0 => 'po'), 'translation.loader.mo' => array(0 => 'mo'), 'translation.loader.qt' => array(0 => 'ts'), 'translation.loader.csv' => array(0 => 'csv'), 'translation.loader.res' => array(0 => 'res'), 'translation.loader.dat' => array(0 => 'dat'), 'translation.loader.ini' => array(0 => 'ini'), 'translation.loader.json' => array(0 => 'json')), array('cache_dir' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev/translations', 'debug' => true));
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -2871,14 +2946,22 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTwigService()
     {
+<<<<<<< HEAD
         $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception:showAction', 'autoescape_service' => NULL, 'autoescape_service_method' => NULL, 'cache' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/twig', 'charset' => 'UTF-8', 'paths' => array()));
+=======
+        $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception:showAction', 'autoescape_service' => NULL, 'autoescape_service_method' => NULL, 'cache' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev/twig', 'charset' => 'UTF-8', 'paths' => array()));
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
 
         $instance->addExtension(new \Symfony\Bundle\SecurityBundle\Twig\Extension\LogoutUrlExtension($this->get('templating.helper.logout_url')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\SecurityExtension($this->get('security.context', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($this->get('translator')));
         $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\AssetsExtension($this));
         $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\ActionsExtension($this));
+<<<<<<< HEAD
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\CodeExtension(NULL, 'C:/wamp/www/www.gangauthority.com-master/app', 'UTF-8'));
+=======
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\CodeExtension(NULL, 'C:/wamp/www/www.gangauthority.com/app', 'UTF-8'));
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\RoutingExtension($this->get('router')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\YamlExtension());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\StopwatchExtension($this->get('debug.stopwatch', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
@@ -2932,6 +3015,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['twig.loader'] = $instance = new \Symfony\Bundle\TwigBundle\Loader\FilesystemLoader($this->get('templating.locator'), $this->get('templating.name_parser'));
 
+<<<<<<< HEAD
         $instance->addPath('C:\\wamp\\www\\www.gangauthority.com-master\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views', 'Framework');
         $instance->addPath('C:\\wamp\\www\\www.gangauthority.com-master\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views', 'Security');
         $instance->addPath('C:\\wamp\\www\\www.gangauthority.com-master\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views', 'Twig');
@@ -2943,6 +3027,19 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('C:\\wamp\\www\\www.gangauthority.com-master\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
         $instance->addPath('C:/wamp/www/www.gangauthority.com-master/app/Resources/views');
         $instance->addPath('C:\\wamp\\www\\www.gangauthority.com-master\\vendor\\symfony\\symfony\\src\\Symfony\\Bridge\\Twig/Resources/views/Form');
+=======
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views', 'Framework');
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views', 'Security');
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views', 'Twig');
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\vendor\\symfony\\swiftmailer-bundle\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', 'Swiftmailer');
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views', 'Doctrine');
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\src\\GangAuthority\\UserBundle/Resources/views', 'GangAuthorityUser');
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\src\\Acme\\DemoBundle/Resources/views', 'AcmeDemo');
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
+        $instance->addPath('C:/wamp/www/www.gangauthority.com/app/Resources/views');
+        $instance->addPath('C:\\wamp\\www\\www.gangauthority.com\\vendor\\symfony\\symfony\\src\\Symfony\\Bridge\\Twig/Resources/views/Form');
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
 
         return $instance;
     }
@@ -3065,7 +3162,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_AssetFactoryService()
     {
+<<<<<<< HEAD
         $this->services['assetic.asset_factory'] = $instance = new \Symfony\Bundle\AsseticBundle\Factory\AssetFactory($this->get('kernel'), $this, $this->getParameterBag(), 'C:/wamp/www/www.gangauthority.com-master/app/../web', true);
+=======
+        $this->services['assetic.asset_factory'] = $instance = new \Symfony\Bundle\AsseticBundle\Factory\AssetFactory($this->get('kernel'), $this, $this->getParameterBag(), 'C:/wamp/www/www.gangauthority.com/app/../web', true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
 
         $instance->addWorker(new \Symfony\Bundle\AsseticBundle\Factory\Worker\UseControllerWorker());
 
@@ -3086,7 +3187,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_CacheService()
     {
+<<<<<<< HEAD
         return $this->services['assetic.cache'] = new \Assetic\Cache\FilesystemCache('C:/wamp/www/www.gangauthority.com-master/app/cache/dev/assetic/assets');
+=======
+        return $this->services['assetic.cache'] = new \Assetic\Cache\FilesystemCache('C:/wamp/www/www.gangauthority.com/app/cache/dev/assetic/assets');
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -3302,7 +3407,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTemplating_LocatorService()
     {
+<<<<<<< HEAD
         return $this->services['templating.locator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator($this->get('file_locator'), 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev');
+=======
+        return $this->services['templating.locator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator($this->get('file_locator'), 'C:/wamp/www/www.gangauthority.com/app/cache/dev');
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -3353,7 +3462,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getValidator_Mapping_ClassMetadataFactoryService()
     {
+<<<<<<< HEAD
         return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => 'C:\\wamp\\www\\www.gangauthority.com-master\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array()))), NULL);
+=======
+        return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => 'C:\\wamp\\www\\www.gangauthority.com\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array()))), NULL);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 
     /**
@@ -3407,12 +3520,21 @@ class appDevDebugProjectContainer extends Container
     protected function getDefaultParameters()
     {
         return array(
+<<<<<<< HEAD
             'kernel.root_dir' => 'C:/wamp/www/www.gangauthority.com-master/app',
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
             'kernel.name' => 'app',
             'kernel.cache_dir' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev',
             'kernel.logs_dir' => 'C:/wamp/www/www.gangauthority.com-master/app/logs',
+=======
+            'kernel.root_dir' => 'C:/wamp/www/www.gangauthority.com/app',
+            'kernel.environment' => 'dev',
+            'kernel.debug' => true,
+            'kernel.name' => 'app',
+            'kernel.cache_dir' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev',
+            'kernel.logs_dir' => 'C:/wamp/www/www.gangauthority.com/app/logs',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             'kernel.bundles' => array(
                 'FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
                 'SecurityBundle' => 'Symfony\\Bundle\\SecurityBundle\\SecurityBundle',
@@ -3494,7 +3616,11 @@ class appDevDebugProjectContainer extends Container
             'debug.errors_logger_listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\ErrorsLoggerListener',
             'debug.event_dispatcher.class' => 'Symfony\\Component\\HttpKernel\\Debug\\TraceableEventDispatcher',
             'debug.stopwatch.class' => 'Symfony\\Component\\Stopwatch\\Stopwatch',
+<<<<<<< HEAD
             'debug.container.dump' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/appDevDebugProjectContainer.xml',
+=======
+            'debug.container.dump' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev/appDevDebugProjectContainer.xml',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             'debug.controller_resolver.class' => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableControllerResolver',
             'kernel.secret' => 'bbd7cbaa1fdcc85c4b1cbc9fa1025b27aaa63ef1',
             'kernel.http_method_override' => true,
@@ -3519,7 +3645,11 @@ class appDevDebugProjectContainer extends Container
             'session.storage.options' => array(
 
             ),
+<<<<<<< HEAD
             'session.save_path' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/sessions',
+=======
+            'session.save_path' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev/sessions',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             'session.metadata.update_threshold' => '0',
             'security.secure_random.class' => 'Symfony\\Component\\Security\\Core\\Util\\SecureRandom',
             'form.resolved_type_factory.class' => 'Symfony\\Component\\Form\\ResolvedFormTypeFactory',
@@ -3578,7 +3708,11 @@ class appDevDebugProjectContainer extends Container
             'validator.mapping.loader.yaml_files_loader.class' => 'Symfony\\Component\\Validator\\Mapping\\Loader\\YamlFilesLoader',
             'validator.validator_factory.class' => 'Symfony\\Bundle\\FrameworkBundle\\Validator\\ConstraintValidatorFactory',
             'validator.mapping.loader.xml_files_loader.mapping_files' => array(
+<<<<<<< HEAD
                 0 => 'C:\\wamp\\www\\www.gangauthority.com-master\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml',
+=======
+                0 => 'C:\\wamp\\www\\www.gangauthority.com\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             ),
             'validator.mapping.loader.yaml_files_loader.mapping_files' => array(
 
@@ -3602,7 +3736,11 @@ class appDevDebugProjectContainer extends Container
             'data_collector.form.extractor.class' => 'Symfony\\Component\\Form\\Extension\\DataCollector\\FormDataExtractor',
             'profiler_listener.only_exceptions' => false,
             'profiler_listener.only_master_requests' => false,
+<<<<<<< HEAD
             'profiler.storage.dsn' => 'file:C:/wamp/www/www.gangauthority.com-master/app/cache/dev/profiler',
+=======
+            'profiler.storage.dsn' => 'file:C:/wamp/www/www.gangauthority.com/app/cache/dev/profiler',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             'profiler.storage.username' => '',
             'profiler.storage.password' => '',
             'profiler.storage.lifetime' => 86400,
@@ -3626,7 +3764,11 @@ class appDevDebugProjectContainer extends Container
             'router.request_context.host' => 'localhost',
             'router.request_context.scheme' => 'http',
             'router.request_context.base_url' => '',
+<<<<<<< HEAD
             'router.resource' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/assetic/routing.yml',
+=======
+            'router.resource' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev/assetic/routing.yml',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             'router.cache_class_prefix' => 'appDev',
             'request_listener.http_port' => 80,
             'request_listener.https_port' => 443,
@@ -3747,7 +3889,11 @@ class appDevDebugProjectContainer extends Container
                 'exception_controller' => 'twig.controller.exception:showAction',
                 'autoescape_service' => NULL,
                 'autoescape_service_method' => NULL,
+<<<<<<< HEAD
                 'cache' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/twig',
+=======
+                'cache' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev/twig',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
                 'charset' => 'UTF-8',
                 'paths' => array(
 
@@ -3814,7 +3960,11 @@ class appDevDebugProjectContainer extends Container
             'swiftmailer.mailer.default.transport.smtp.auth_mode' => NULL,
             'swiftmailer.mailer.default.transport.smtp.timeout' => 30,
             'swiftmailer.mailer.default.transport.smtp.source_ip' => NULL,
+<<<<<<< HEAD
             'swiftmailer.spool.default.memory.path' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/swiftmailer/spool/default',
+=======
+            'swiftmailer.spool.default.memory.path' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev/swiftmailer/spool/default',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             'swiftmailer.mailer.default.spool.enabled' => true,
             'swiftmailer.mailer.default.plugin.impersonate' => NULL,
             'swiftmailer.mailer.default.single_address' => NULL,
@@ -3840,7 +3990,11 @@ class appDevDebugProjectContainer extends Container
             'assetic.node.paths' => array(
 
             ),
+<<<<<<< HEAD
             'assetic.cache_dir' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/assetic',
+=======
+            'assetic.cache_dir' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev/assetic',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             'assetic.bundles' => array(
 
             ),
@@ -3852,12 +4006,21 @@ class appDevDebugProjectContainer extends Container
             'assetic.debug' => true,
             'assetic.use_controller' => true,
             'assetic.enable_profiler' => false,
+<<<<<<< HEAD
             'assetic.read_from' => 'C:/wamp/www/www.gangauthority.com-master/app/../web',
             'assetic.write_to' => 'C:/wamp/www/www.gangauthority.com-master/app/../web',
             'assetic.variables' => array(
 
             ),
             'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
+=======
+            'assetic.read_from' => 'C:/wamp/www/www.gangauthority.com/app/../web',
+            'assetic.write_to' => 'C:/wamp/www/www.gangauthority.com/app/../web',
+            'assetic.variables' => array(
+
+            ),
+            'assetic.java.bin' => 'C:\\WINDOWS\\system32\\java.EXE',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
@@ -3926,7 +4089,11 @@ class appDevDebugProjectContainer extends Container
             'doctrine.orm.naming_strategy.default.class' => 'Doctrine\\ORM\\Mapping\\DefaultNamingStrategy',
             'doctrine.orm.naming_strategy.underscore.class' => 'Doctrine\\ORM\\Mapping\\UnderscoreNamingStrategy',
             'doctrine.orm.auto_generate_proxy_classes' => true,
+<<<<<<< HEAD
             'doctrine.orm.proxy_dir' => 'C:/wamp/www/www.gangauthority.com-master/app/cache/dev/doctrine/orm/Proxies',
+=======
+            'doctrine.orm.proxy_dir' => 'C:/wamp/www/www.gangauthority.com/app/cache/dev/doctrine/orm/Proxies',
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             'doctrine.orm.proxy_namespace' => 'Proxies',
             'sensio_framework_extra.view.guesser.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Templating\\TemplateGuesser',
             'sensio_framework_extra.controller.listener.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\ControllerListener',

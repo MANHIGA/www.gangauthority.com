@@ -17,7 +17,11 @@ class __TwigTemplate_9c399a2d90afe67de6bd4febb10a72e2304fdaff1d5f913db425a21f3b2
     {
         // line 1
         echo "<div id=\"sfwdt";
+<<<<<<< HEAD
         echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
         echo "\" class=\"sf-toolbar\" style=\"display: none\"></div>
 ";
         // line 2
@@ -27,10 +31,17 @@ class __TwigTemplate_9c399a2d90afe67de6bd4febb10a72e2304fdaff1d5f913db425a21f3b2
     (function () {
         ";
         // line 5
+<<<<<<< HEAD
         if (("top" == $this->getContext($context, "position"))) {
             // line 6
             echo "            var sfwdt = document.getElementById('sfwdt";
             echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+        if (("top" == (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")))) {
+            // line 6
+            echo "            var sfwdt = document.getElementById('sfwdt";
+            echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
             echo "');
             document.body.insertBefore(
                 document.body.removeChild(sfwdt),
@@ -43,11 +54,19 @@ class __TwigTemplate_9c399a2d90afe67de6bd4febb10a72e2304fdaff1d5f913db425a21f3b2
         Sfjs.load(
             'sfwdt";
         // line 14
+<<<<<<< HEAD
         echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
         echo "',
             '";
         // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_wdt", array("token" => $this->getContext($context, "token"))), "html", null, true);
+=======
+        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+        echo "',
+            '";
+        // line 15
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_wdt", array("token" => (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")))), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
         echo "',
             function(xhr, el) {
                 el.style.display = -1 !== xhr.responseText.indexOf('sf-toolbarreset') ? 'block' : 'none';
@@ -59,6 +78,7 @@ class __TwigTemplate_9c399a2d90afe67de6bd4febb10a72e2304fdaff1d5f913db425a21f3b2
                 if (Sfjs.getPreference('toolbar/displayState') == 'none') {
                     document.getElementById('sfToolbarMainContent-";
         // line 24
+<<<<<<< HEAD
         echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
         echo "').style.display = 'none';
                     document.getElementById('sfToolbarClearer-";
@@ -68,10 +88,22 @@ class __TwigTemplate_9c399a2d90afe67de6bd4febb10a72e2304fdaff1d5f913db425a21f3b2
                     document.getElementById('sfMiniToolbar-";
         // line 26
         echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+        echo "').style.display = 'none';
+                    document.getElementById('sfToolbarClearer-";
+        // line 25
+        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+        echo "').style.display = 'none';
+                    document.getElementById('sfMiniToolbar-";
+        // line 26
+        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
         echo "').style.display = 'block';
                 } else {
                     document.getElementById('sfToolbarMainContent-";
         // line 28
+<<<<<<< HEAD
         echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
         echo "').style.display = 'block';
                     document.getElementById('sfToolbarClearer-";
@@ -81,6 +113,17 @@ class __TwigTemplate_9c399a2d90afe67de6bd4febb10a72e2304fdaff1d5f913db425a21f3b2
                     document.getElementById('sfMiniToolbar-";
         // line 30
         echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
+=======
+        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+        echo "').style.display = 'block';
+                    document.getElementById('sfToolbarClearer-";
+        // line 29
+        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+        echo "').style.display = 'block';
+                    document.getElementById('sfMiniToolbar-";
+        // line 30
+        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
         echo "').style.display = 'none';
                 }
             },
@@ -88,7 +131,11 @@ class __TwigTemplate_9c399a2d90afe67de6bd4febb10a72e2304fdaff1d5f913db425a21f3b2
                 if (xhr.status !== 0) {
                     confirm('An error occurred while loading the web debug toolbar (' + xhr.status + ': ' + xhr.statusText + ').\\n\\nDo you want to open the profiler?') && (window.location = '";
         // line 35
+<<<<<<< HEAD
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_profiler", array("token" => $this->getContext($context, "token"))), "html", null, true);
+=======
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_profiler", array("token" => (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")))), "html", null, true);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
         echo "');
                 }
             },
@@ -111,6 +158,10 @@ class __TwigTemplate_9c399a2d90afe67de6bd4febb10a72e2304fdaff1d5f913db425a21f3b2
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  91 => 35,  83 => 30,  79 => 29,  75 => 28,  70 => 26,  66 => 25,  62 => 24,  50 => 15,  26 => 3,  24 => 2,  19 => 1,  98 => 40,  93 => 9,  46 => 14,  44 => 9,  40 => 8,  32 => 6,  27 => 4,  22 => 1,  120 => 20,  117 => 19,  110 => 22,  108 => 19,  105 => 18,  102 => 17,  94 => 34,  90 => 32,  88 => 6,  84 => 29,  82 => 28,  78 => 40,  73 => 16,  64 => 13,  61 => 12,  56 => 11,  53 => 10,  47 => 8,  41 => 5,  33 => 3,  158 => 79,  139 => 63,  135 => 62,  131 => 61,  127 => 28,  123 => 59,  106 => 45,  101 => 43,  97 => 41,  85 => 32,  80 => 41,  76 => 17,  74 => 27,  63 => 19,  58 => 17,  48 => 9,  45 => 8,  42 => 12,  36 => 7,  30 => 5,);
+=======
+        return array (  91 => 35,  83 => 30,  79 => 29,  75 => 28,  70 => 26,  66 => 25,  62 => 24,  50 => 15,  46 => 14,  42 => 12,  24 => 2,  19 => 1,  82 => 27,  77 => 4,  60 => 28,  58 => 27,  39 => 11,  30 => 5,  26 => 3,  21 => 1,  40 => 8,  37 => 7,  32 => 6,  29 => 3,);
+>>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
     }
 }
