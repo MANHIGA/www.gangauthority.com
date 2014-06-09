@@ -1,0 +1,7 @@
+parameters:
+#    gang_authority_user.example.class: GangAuthority\UserBundle\Example
+
+services:
+#    gang_authority_user.example:
+#        class: %gang_authority_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

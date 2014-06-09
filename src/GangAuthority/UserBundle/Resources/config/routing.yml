@@ -1,0 +1,15 @@
+gang_authority_user_homepage:
+    pattern:  /index
+    defaults: { _controller: GangAuthorityUserBundle:Default:index }
+gang_authority_user_stats:
+    pattern: /stats
+    defaults: { _controller: GangAuthorityUserBundle:Default:stats }
+gang_authority_user_telechargement:
+    pattern: /telechargement
+    defaults: { _controller: GangAuthorityUserBundle:Default:telechargement }
+gang_authority_user_profile:
+    pattern: /profile
+    defaults: { _controller: GangAuthorityUserBundle:Default:profile }
+gang_authority_user_connexion:
+    pattern: /connexion
+    defaults: { _controller: GangAuthorityUserBundle:Default:connexion }

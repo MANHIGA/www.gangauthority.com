@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('bundles/gangauthorityuser/css/style.css') }}" type="text/css" media="all" />
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
+</head>
+<body>   
+    <div id="content-header"> 
+        <img src="{{ asset('bundles/gangauthorityuser/images/ga.png') }}">
+        <ul id="main-menu">
+            <li><a href="{{ path('gang_authority_user_homepage') }}" id="urlIndex">Accueil</a></li>
+            <li><div id="split_menu"></div></li>
+            <li><a href="{{ path('gang_authority_user_stats') }}" id="urlStatistiques">Statistiques</a></li>
+            <li><div id="split_menu"></div></li>
+            <li><a href="{{ path('gang_authority_user_telechargement') }}" id="urlTelechargement">Téléchargement</a></li>
+            <li><div id="split_menu"></div></li>
+            <li><a href="{{ path('gang_authority_user_profile') }}" id="urlCompte">Mon compte</a></li>
+            <li><div id="split_menu"></div></li>
+            <li><a href="{{ path('login') }}" id="urlConnexion">Connexion</a></li>
+        </ul>
+    </div>
+
+    <div id="page">           
+        <div id="content">
+            {% block content %}bl{% endblock %}
+        </div>
+    </div>
+    <div id="footer">
+        <ul>
+            <li><a>Conditions d'utilisation /</a></li>
+            <li><a>A propos /</a></li>
+            <li><a>Nous contacter /</a></li>
+            <li><a>Copyright 2014</a></li>
+        </ul>
+    </div>
+</body>
