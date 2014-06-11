@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Administrateur" table="administrateur">
+    <id name="idadmin" type="integer" column="idAdmin">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="pseudoadmin" type="string" column="pseudoAdmin" length="25" nullable="false"/>
+    <field name="emailadmin" type="string" column="emailAdmin" length="25" nullable="false"/>
+    <field name="mdpadmin" type="string" column="mdpAdmin" length="32" nullable="false"/>
+  </entity>
+</doctrine-mapping>

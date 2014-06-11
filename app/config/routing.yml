@@ -1,7 +1,6 @@
 gang_authority_user:
     resource: "@GangAuthorityUserBundle/Resources/config/routing.yml"
     prefix:   /
-<<<<<<< HEAD
 login:
     pattern:    /login
     defaults:    { _controller: GangAuthorityUserBundle:Security:login}
@@ -11,6 +10,13 @@ login_check:
 
 logout:
     pattern:    /logout
-=======
+    
+admin_login:
+    pattern:    /admin/login
+    defaults:    { _controller: GangAuthorityUserBundle:Security:adminLogin}
 
->>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
+admin_login_check:
+    pattern:    /admin/login_check
+
+admin_logout:
+    pattern:    /admin/logout

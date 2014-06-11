@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function reset(){
     $(function(){
         $('#anecdote').html("Aujourd'hui, ");
@@ -285,7 +284,6 @@ $(function(){
             $("#urlBackoffice").css("background-color", "white").css("color", "black");
             break;
     }
-=======
 function reset(){
     $(function(){
         $('#anecdote').html("Aujourd'hui, ");
@@ -572,5 +570,4 @@ $(function(){
             $("#urlBackoffice").css("background-color", "white").css("color", "black");
             break;
     }
->>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
 });

@@ -1,6 +1,9 @@
 gang_authority_user_homepage:
     pattern:  /index
     defaults: { _controller: GangAuthorityUserBundle:Default:index }
+gang_authority_homepage:
+    pattern:  /
+    defaults: { _controller: GangAuthorityUserBundle:Default:index }
 gang_authority_user_stats:
     pattern: /stats
     defaults: { _controller: GangAuthorityUserBundle:Default:stats }
@@ -13,3 +16,6 @@ gang_authority_user_profile:
 gang_authority_user_connexion:
     pattern: /connexion
     defaults: { _controller: GangAuthorityUserBundle:Default:connexion }
+gang_authority_admin_homepage:
+    pattern:  /admin/index
+    defaults: { _controller: GangAuthorityUserBundle:Default:index }

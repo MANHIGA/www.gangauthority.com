@@ -47,11 +47,7 @@ class __TwigTemplate_4fb458d9cde80356feeb66818d54e98943fda075275c9d212d9c03ebe25
     {
         // line 14
         echo "    ";
-<<<<<<< HEAD
-        echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('routing')->getPath("_profiler_router", array("token" => $this->getContext($context, "token"))));
-=======
         echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('routing')->getPath("_profiler_router", array("token" => (isset($context["token"]) ? $context["token"] : $this->getContext($context, "token")))));
->>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
         echo "
 ";
     }

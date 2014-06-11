@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Mission" table="mission">
+    <indexes>
+      <index name="FK_Mission_idTypeSbire" columns="Mission_idTypeSbire"/>
+    </indexes>
+    <id name="idmission" type="integer" column="idMission">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dureemission" type="date" column="dureeMission" nullable="false"/>
+    <field name="recompenseargent" type="decimal" column="recompenseArgent" precision="15" scale="3" nullable="false"/>
+    <field name="difficulte" type="string" column="difficulte" length="25" nullable="false"/>
+    <field name="recompensepointautorite" type="integer" column="recompensePointAutorite" nullable="false"/>
+    <field name="tempsreapparitionbase" type="integer" column="tempsReapparitionBase" nullable="false"/>
+    <field name="nbminisbiresrequis" type="integer" column="nbMiniSbiresRequis" nullable="false"/>
+    <many-to-one field="missiontypesbire" target-entity="Typesbire">
+      <join-columns>
+        <join-column name="Mission_idTypeSbire" referenced-column-name="idTypeSbire"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="realisercompte" target-entity="Joueur" mapped-by="realisermission"/>
+  </entity>
+</doctrine-mapping>

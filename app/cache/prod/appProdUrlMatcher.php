@@ -32,6 +32,15 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'gang_authority_user_homepage',);
         }
 
+        // gang_authority_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'gang_authority_homepage');
+            }
+
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'gang_authority_homepage',);
+        }
+
         // gang_authority_user_stats
         if ($pathinfo === '/stats') {
             return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::statsAction',  '_route' => 'gang_authority_user_stats',);
@@ -52,6 +61,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::connexionAction',  '_route' => 'gang_authority_user_connexion',);
         }
 
+        // gang_authority_admin_homepage
+        if ($pathinfo === '/admin/index') {
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'gang_authority_admin_homepage',);
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // login
@@ -69,6 +83,27 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             // logout
             if ($pathinfo === '/logout') {
                 return array('_route' => 'logout');
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/admin/log')) {
+            if (0 === strpos($pathinfo, '/admin/login')) {
+                // admin_login
+                if ($pathinfo === '/admin/login') {
+                    return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\SecurityController::adminLoginAction',  '_route' => 'admin_login',);
+                }
+
+                // admin_login_check
+                if ($pathinfo === '/admin/login_check') {
+                    return array('_route' => 'admin_login_check');
+                }
+
+            }
+
+            // admin_logout
+            if ($pathinfo === '/admin/logout') {
+                return array('_route' => 'admin_logout');
             }
 
         }

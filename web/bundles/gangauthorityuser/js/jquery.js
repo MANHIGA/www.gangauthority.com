@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*!
  * jQuery JavaScript Library v2.1.1pre 2df1aad6a1c9376c2a477eba26ee992113ed1c23
  * http://jquery.com/
@@ -9140,7 +9140,7 @@ if ( typeof noGlobal === strundefined ) {
 return jQuery;
 
 }));
-=======
+
 /*!
  * jQuery JavaScript Library v2.1.1pre 2df1aad6a1c9376c2a477eba26ee992113ed1c23
  * http://jquery.com/
@@ -18282,4 +18282,4 @@ if ( typeof noGlobal === strundefined ) {
 return jQuery;
 
 }));
->>>>>>> 28c7a3e175ce7a0327206ff1480d6522167ee133
+

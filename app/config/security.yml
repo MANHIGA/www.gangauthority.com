@@ -1,27 +1,38 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        GangAuthority\UserBundle\Entity\Joueur: plaintext
+        GangAuthority\UserBundle\Entity\Administrateur: plaintext
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        administrators:
+            entity: { class: GangAuthorityUserBundle:Administrateur, property: pseudoadmin }
+        users:
+            entity: { class: GangAuthorityUserBundle:Joueur, property: pseudo }
 
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        admin:
+            pattern:  ^/admin/.*
+            anonymous: ~
+            provider: administrators
+            form_login:
+                login_path: /admin/login
+                check_path: /admin/login_check
+            logout:
+                path:   /admin/logout
+                target: /admin/index
+                
         main:
             pattern:  ^/
             anonymous: true
-            provider: in_memory
+            provider: users
             form_login:
                 login_path: login
                 check_path: login_check

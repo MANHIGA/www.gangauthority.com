@@ -1,0 +1,127 @@
+<?php
+
+namespace GangAuthority\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Joueur
+ *
+ * @ORM\Table(name="joueur", uniqueConstraints={@ORM\UniqueConstraint(name="pseudo", columns={"pseudo", "nomGang"})})
+ * @ORM\Entity
+ */
+class Joueur
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idCompte", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idcompte;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pseudo", type="string", length=25, nullable=false)
+     */
+    private $pseudo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mdp", type="string", length=32, nullable=false)
+     */
+    private $mdp;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pointAutorite", type="integer", nullable=false)
+     */
+    private $pointautorite;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbMorts", type="integer", nullable=false)
+     */
+    private $nbmorts;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbTues", type="integer", nullable=false)
+     */
+    private $nbtues;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="argent", type="decimal", precision=15, scale=3, nullable=false)
+     */
+    private $argent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomGang", type="string", length=25, nullable=false)
+     */
+    private $nomgang;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Joueur", mappedBy="combattrecompteDefenseur")
+     */
+    private $combattrecompteAttaquant;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Signalement", mappedBy="concernercompte")
+     */
+    private $concernersignalement;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Typebatiment", mappedBy="construirecompte")
+     */
+    private $construiretypebatiment;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Typesbire", mappedBy="entrainercompte")
+     */
+    private $entrainertypesbire;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Mission", mappedBy="realisercompte")
+     */
+    private $realisermission;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->combattrecompteAttaquant = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->concernersignalement = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->construiretypebatiment = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->entrainertypesbire = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->realisermission = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

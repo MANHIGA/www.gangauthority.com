@@ -1,0 +1,63 @@
+<?php
+
+namespace GangAuthority\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Typebatiment
+ *
+ * @ORM\Table(name="typebatiment", indexes={@ORM\Index(name="FK_TypeBatiment_idTypeSbire", columns={"TypeBatiment_idTypeSbire"})})
+ * @ORM\Entity
+ */
+class Typebatiment
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idTypeBatiment", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idtypebatiment;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelleTypeBatiment", type="string", length=25, nullable=false)
+     */
+    private $libelletypebatiment;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tempsCreationBatiment", type="integer", nullable=false)
+     */
+    private $tempscreationbatiment;
+
+    /**
+     * @var \Typesbire
+     *
+     * @ORM\ManyToOne(targetEntity="Typesbire")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="TypeBatiment_idTypeSbire", referencedColumnName="idTypeSbire")
+     * })
+     */
+    private $typebatimenttypesbire;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Joueur", mappedBy="construiretypebatiment")
+     */
+    private $construirecompte;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->construirecompte = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
