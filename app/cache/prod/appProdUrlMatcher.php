@@ -61,9 +61,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::connexionAction',  '_route' => 'gang_authority_user_connexion',);
         }
 
-        // gang_authority_admin_homepage
-        if ($pathinfo === '/admin/index') {
-            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'gang_authority_admin_homepage',);
+        if (0 === strpos($pathinfo, '/admin')) {
+            // gang_authority_admin_homepage
+            if ($pathinfo === '/admin/index') {
+                return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\AdminController::indexAction',  '_route' => 'gang_authority_admin_homepage',);
+            }
+
+            // gang_authority_admin_voirsignalements
+            if ($pathinfo === '/admin/voirSignalements') {
+                return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\AdminController::voirsignalementsAction',  '_route' => 'gang_authority_admin_voirsignalements',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {

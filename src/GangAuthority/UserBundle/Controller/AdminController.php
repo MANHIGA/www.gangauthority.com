@@ -7,11 +7,17 @@
 
 namespace GangAuthority\UserBundle\Controller;
 
-/**
- * Description of AdminController
- *
- * @author Rems
- */
-class AdminController {
-    //put your code here
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class AdminController extends Controller
+{
+    public function indexAction()
+    {
+        return $this->render('GangAuthorityUserBundle:Admin:index.html.twig');
+    }
+    public function voirSignalementsAction()
+    {
+    	return $this->render('GangAuthorityUserBundle:Admin:voirsignalements.html.twig');
+    }
 }
+

@@ -18,4 +18,10 @@ gang_authority_user_connexion:
     defaults: { _controller: GangAuthorityUserBundle:Default:connexion }
 gang_authority_admin_homepage:
     pattern:  /admin/index
-    defaults: { _controller: GangAuthorityUserBundle:Default:index }
+    defaults: { _controller: GangAuthorityUserBundle:Admin:index }
+gang_authority_admin_homepage:
+    pattern:  /admin
+    defaults: { _controller: GangAuthorityUserBundle:Admin:index }
+gang_authority_admin_voirsignalements:
+    pattern:  /admin/voirSignalements
+    defaults: { _controller: GangAuthorityUserBundle:Admin:voirsignalements }
