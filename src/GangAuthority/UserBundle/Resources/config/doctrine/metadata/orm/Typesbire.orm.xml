@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Typesbire" table="typesbire">
+    <indexes>
+      <index name="FK_TypeSbire_idTypeBatiment" columns="TypeSbire_idTypeBatiment"/>
+    </indexes>
+    <id name="idtypesbire" type="integer" column="idTypeSbire">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="libelletypesbire" type="string" column="libelleTypeSbire" length="25" nullable="false"/>
+    <field name="cout" type="decimal" column="cout" precision="15" scale="3" nullable="false"/>
+    <field name="tempsapparition" type="integer" column="tempsApparition" nullable="false"/>
+    <many-to-one field="typesbiretypebatiment" target-entity="Typebatiment">
+      <join-columns>
+        <join-column name="TypeSbire_idTypeBatiment" referenced-column-name="idTypeBatiment"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="entrainercompte" target-entity="Joueur" mapped-by="entrainertypesbire"/>
+  </entity>
+</doctrine-mapping>

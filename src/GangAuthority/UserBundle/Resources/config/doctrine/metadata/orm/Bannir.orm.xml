@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Bannir" table="bannir">
+    <indexes>
+      <index name="FK_bannir_idCompte" columns="Bannir_idCompte"/>
+      <index name="FK_bannir_idSignalement" columns="Bannir_idSignalement"/>
+      <index name="IDX_C328F7EB1CCFFFFE" columns="Bannir_idAdmin"/>
+    </indexes>
+    <id name="bannirsignalement" association-key="true"/>
+    <id name="banniradmin" association-key="true"/>
+    <id name="bannircompte" association-key="true"/>
+    <field name="datebannissement" type="date" column="dateBannissement" nullable="false"/>
+    <field name="dureebannissement" type="integer" column="dureeBannissement" nullable="false"/>
+    <one-to-one field="bannircompte" target-entity="Joueur">
+      <join-columns>
+        <join-column name="Bannir_idCompte" referenced-column-name="idCompte"/>
+      </join-columns>
+    </one-to-one>
+    <one-to-one field="banniradmin" target-entity="Administrateur">
+      <join-columns>
+        <join-column name="Bannir_idAdmin" referenced-column-name="idAdmin"/>
+      </join-columns>
+    </one-to-one>
+    <one-to-one field="bannirsignalement" target-entity="Signalement">
+      <join-columns>
+        <join-column name="Bannir_idSignalement" referenced-column-name="idSignalement"/>
+      </join-columns>
+    </one-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,70 @@
+<?php
+
+namespace GangAuthority\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Typesbire
+ *
+ * @ORM\Table(name="typesbire", indexes={@ORM\Index(name="FK_TypeSbire_idTypeBatiment", columns={"TypeSbire_idTypeBatiment"})})
+ * @ORM\Entity
+ */
+class Typesbire
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idTypeSbire", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idtypesbire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelleTypeSbire", type="string", length=25, nullable=false)
+     */
+    private $libelletypesbire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cout", type="decimal", precision=15, scale=3, nullable=false)
+     */
+    private $cout;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tempsApparition", type="integer", nullable=false)
+     */
+    private $tempsapparition;
+
+    /**
+     * @var \Typebatiment
+     *
+     * @ORM\ManyToOne(targetEntity="Typebatiment")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="TypeSbire_idTypeBatiment", referencedColumnName="idTypeBatiment")
+     * })
+     */
+    private $typesbiretypebatiment;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Joueur", mappedBy="entrainertypesbire")
+     */
+    private $entrainercompte;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->entrainercompte = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Signalement" table="signalement">
+    <indexes>
+      <index name="FK_Signalement_idCompte" columns="Signalement_idCompte"/>
+    </indexes>
+    <id name="idsignalement" type="integer" column="idSignalement">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="justification" type="text" column="justification" nullable="false"/>
+    <field name="datesignalement" type="date" column="dateSignalement" nullable="false"/>
+    <many-to-one field="signalementcompte" target-entity="Joueur">
+      <join-columns>
+        <join-column name="Signalement_idCompte" referenced-column-name="idCompte"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="concernercompte" target-entity="Joueur" inversed-by="concernersignalement">
+      <join-table name="concerner">
+        <join-columns>
+          <join-column name="Concerner_idSignalement" referenced-column-name="idSignalement"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="Concerner_idCompte" referenced-column-name="idCompte"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

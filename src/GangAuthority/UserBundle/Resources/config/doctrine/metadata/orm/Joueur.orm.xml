@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Joueur" table="joueur">
+    <unique-constraints>
+      <unique-constraint name="pseudo" columns="pseudo,nomGang"/>
+    </unique-constraints>
+    <id name="idcompte" type="integer" column="idCompte">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="pseudo" type="string" column="pseudo" length="25" nullable="false"/>
+    <field name="email" type="string" column="email" length="100" nullable="false"/>
+    <field name="mdp" type="string" column="mdp" length="32" nullable="false"/>
+    <field name="pointautorite" type="integer" column="pointAutorite" nullable="false"/>
+    <field name="nbmorts" type="integer" column="nbMorts" nullable="false"/>
+    <field name="nbtues" type="integer" column="nbTues" nullable="false"/>
+    <field name="argent" type="decimal" column="argent" precision="15" scale="3" nullable="false"/>
+    <field name="nomgang" type="string" column="nomGang" length="25" nullable="false"/>
+    <many-to-many field="realisermission" target-entity="Mission" mapped-by="realisercompte"/>
+    <many-to-many field="entrainertypesbire" target-entity="Typesbire" mapped-by="entrainercompte"/>
+    <many-to-many field="construiretypebatiment" target-entity="Typebatiment" mapped-by="construirecompte"/>
+    <many-to-many field="concernersignalement" target-entity="Signalement" mapped-by="concernercompte"/>
+    <many-to-many field="combattrecompteAttaquant" target-entity="Joueur" mapped-by="combattrecompteDefenseur"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,46 @@
+<?php
+
+namespace GangAuthority\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Administrateur
+ *
+ * @ORM\Table(name="administrateur")
+ * @ORM\Entity
+ */
+class Administrateur
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idAdmin", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idadmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pseudoAdmin", type="string", length=25, nullable=false)
+     */
+    private $pseudoadmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="emailAdmin", type="string", length=25, nullable=false)
+     */
+    private $emailadmin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mdpAdmin", type="string", length=32, nullable=false)
+     */
+    private $mdpadmin;
+
+
+}
