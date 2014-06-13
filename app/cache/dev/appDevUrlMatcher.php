@@ -171,8 +171,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         if (0 === strpos($pathinfo, '/admin')) {
             // gang_authority_admin_homepage
-            if ($pathinfo === '/admin') {
+            if ($pathinfo === '/admin/index') {
                 return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\AdminController::indexAction',  '_route' => 'gang_authority_admin_homepage',);
+            }
+
+            // gang_authority_admin
+            if (rtrim($pathinfo, '/') === '/admin') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'gang_authority_admin');
+                }
+
+                return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\AdminController::indexAction',  '_route' => 'gang_authority_admin',);
             }
 
             // gang_authority_admin_voirsignalements
@@ -180,6 +189,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\AdminController::voirsignalementsAction',  '_route' => 'gang_authority_admin_voirsignalements',);
             }
 
+            // gang_authority_admin_bannir
+            if ($pathinfo === '/admin/bannir') {
+                return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\AdminController::bannirAction',  '_route' => 'gang_authority_admin_bannir',);
+            }
+
+            // gang_authority_admin_voirbannir
+            if (0 === strpos($pathinfo, '/admin/voirBannir') && preg_match('#^/admin/voirBannir/(?P<idsignalement>[^/]++)/(?P<idcompte>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'gang_authority_admin_voirbannir')), array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\AdminController::voirbannirAction',));
+            }
+
+        }
+
+        // gang_authority_user_signup
+        if ($pathinfo === '/signup') {
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::signupAction',  '_route' => 'gang_authority_user_signup',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

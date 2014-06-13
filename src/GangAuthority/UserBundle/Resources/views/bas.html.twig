@@ -16,11 +16,15 @@
             <li><div id="split_menu"></div></li>
             <li><a href="{{ path('gang_authority_user_telechargement') }}" id="urlTelechargement">Téléchargement</a></li>
             <li><div id="split_menu"></div></li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <li><a href="{{ path('gang_authority_user_profile') }}" id="urlCompte">Mon compte</a></li>
             <li><div id="split_menu"></div></li>
+            <li><a href="{{ path('logout') }}" id="urlDeconnexion">Deconnexion</a></li>
+            {% else %}         
             <li><a href="{{ path('login') }}" id="urlConnexion">Connexion</a></li>
             <li><div id="split_menu"></div></li>
-            <li><a href="{{ path('logout') }}" id="urlDeconnexion">Deconnexion</a></li>
+            <li><a href="{{ path('gang_authority_user_signup') }}" id="urlInscription">Inscription</a></li>         
+            {% endif %}
         </ul>
     </div>
 

@@ -7,9 +7,45 @@
 {% endblock %}
 
 {% block content %}
+<table>
+	{% for joueur in joueurspoints %}
+	<tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ joueur.pseudo }}</td>
+        <td>{{ joueur.pointautorite }}</td>
+    </tr>
+    {% endfor %}
+</table>
 
-	Stats, BITCH!
+<table>
+	{% for joueur in joueursnbtues %}
+	<tr>
+        <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ joueur.pseudo }}</td>
+        <td>{{ joueur.nbtues }}</td>
+    </tr>
+    </tr>
+    {% endfor %}
+</table>
 
-	Hello World !
+<table>
+	{% for joueur in joueursnbmorts %}
+	<tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ joueur.pseudo }}</td>
+        <td>{{ joueur.nbmorts }}</td>
+    </tr>
+    {% endfor %}
+</table>
 
+<table>
+	{% for joueur in joueursargent %}
+	<tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ joueur.pseudo }}</td>
+        <td>{{ joueur.argent }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

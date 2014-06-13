@@ -19,9 +19,18 @@ gang_authority_user_connexion:
 gang_authority_admin_homepage:
     pattern:  /admin/index
     defaults: { _controller: GangAuthorityUserBundle:Admin:index }
-gang_authority_admin_homepage:
-    pattern:  /admin
+gang_authority_admin:
+    pattern:  /admin/
     defaults: { _controller: GangAuthorityUserBundle:Admin:index }
 gang_authority_admin_voirsignalements:
     pattern:  /admin/voirSignalements
     defaults: { _controller: GangAuthorityUserBundle:Admin:voirsignalements }
+gang_authority_admin_bannir:
+    pattern:  /admin/bannir
+    defaults: { _controller: GangAuthorityUserBundle:Admin:bannir }
+gang_authority_admin_voirbannir:
+    pattern:  /admin/voirBannir/{idsignalement}/{idcompte}
+    defaults: { _controller: GangAuthorityUserBundle:Admin:voirbannir }
+gang_authority_user_signup:
+    pattern: /signup
+    defaults: { _controller: GangAuthorityUserBundle:Default:signup }

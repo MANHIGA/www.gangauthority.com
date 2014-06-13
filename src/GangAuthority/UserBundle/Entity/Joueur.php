@@ -134,7 +134,7 @@ class Joueur implements UserInterface
         $this->entrainertypesbire = new \Doctrine\Common\Collections\ArrayCollection();
         $this->realisermission = new \Doctrine\Common\Collections\ArrayCollection();
         $this->isActive = true;
-        $this->salt = md5(uniqid(null, true));
+        $this->salt = "";
     }
 
     /**
@@ -192,6 +192,10 @@ class Joueur implements UserInterface
     {
         return $this->pseudo;
     }
+    public function getPseudo()
+    {
+        return $this->pseudo;
+    }
 
     /**
      * Set email
@@ -238,6 +242,11 @@ class Joueur implements UserInterface
     {
         return $this->mdp;
     }
+    public function getMdp()
+    {
+        return $this->mdp;
+    }
+
 
     /**
      * Set pointautorite

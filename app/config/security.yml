@@ -19,16 +19,18 @@ security:
             security: false
 
         admin:
-            pattern:  ^/admin/.*
+            pattern:  ^/admin/
             anonymous: ~
             provider: administrators
             form_login:
                 login_path: /admin/login
                 check_path: /admin/login_check
+                always_use_default_target_path: true
+                default_target_path: /admin/index
             logout:
                 path:   /admin/logout
                 target: /admin/index
-                
+
         main:
             pattern:  ^/
             anonymous: true
@@ -42,4 +44,6 @@ security:
 
 
     access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/admin/voirSignalements, roles: ROLE_ADMIN }
+        - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/admin/voirBannir, roles: ROLE_ADMIN }

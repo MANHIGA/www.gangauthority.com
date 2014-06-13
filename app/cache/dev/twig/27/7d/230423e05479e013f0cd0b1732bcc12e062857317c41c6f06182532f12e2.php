@@ -7,7 +7,7 @@ class __TwigTemplate_277d230423e05479e013f0cd0b1732bcc12e062857317c41c6f06182532
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("GangAuthorityUserBundle::bas.html.twig");
+        $this->parent = $this->env->loadTemplate("GangAuthorityUserBundle:Admin:bas.html.twig");
 
         $this->blocks = array(
             'content' => array($this, 'block_content'),
@@ -16,7 +16,7 @@ class __TwigTemplate_277d230423e05479e013f0cd0b1732bcc12e062857317c41c6f06182532
 
     protected function doGetParent(array $context)
     {
-        return "GangAuthorityUserBundle::bas.html.twig";
+        return "GangAuthorityUserBundle:Admin:bas.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
