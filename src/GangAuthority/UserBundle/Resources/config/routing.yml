@@ -34,3 +34,6 @@ gang_authority_admin_voirbannir:
 gang_authority_user_signup:
     pattern: /signup
     defaults: { _controller: GangAuthorityUserBundle:Default:signup }
+gang_authority_admin_mission:
+    pattern: /admin/mission
+    defaults: { _controller: GangAuthorityUserBundle:Admin:creermission }

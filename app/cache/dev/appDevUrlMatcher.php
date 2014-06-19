@@ -206,6 +206,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::signupAction',  '_route' => 'gang_authority_user_signup',);
         }
 
+        // gang_authority_admin_mission
+        if ($pathinfo === '/admin/mission') {
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\AdminController::creermissionAction',  '_route' => 'gang_authority_admin_mission',);
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // login

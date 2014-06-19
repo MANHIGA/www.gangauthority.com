@@ -7,7 +7,7 @@
     <id name="idmission" type="integer" column="idMission">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="dureemission" type="date" column="dureeMission" nullable="false"/>
+    <field name="dureemission" type="integer" column="dureeMission" nullable="false"/>
     <field name="recompenseargent" type="decimal" column="recompenseArgent" precision="15" scale="3" nullable="false"/>
     <field name="difficulte" type="string" column="difficulte" length="25" nullable="false"/>
     <field name="recompensepointautorite" type="integer" column="recompensePointAutorite" nullable="false"/>

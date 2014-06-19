@@ -54,29 +54,43 @@ class __TwigTemplate_1b0d820acefe0f8464134df0a6c6c2e1d1e9fdd1e08148b6d4d71008ae7
         echo $this->env->getExtension('routing')->getPath("gang_authority_user_telechargement");
         echo "\" id=\"urlTelechargement\">Téléchargement</a></li>
             <li><div id=\"split_menu\"></div></li>
-            <li><a href=\"";
+            ";
         // line 19
-        echo $this->env->getExtension('routing')->getPath("gang_authority_user_profile");
-        echo "\" id=\"urlCompte\">Mon compte</a></li>
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 20
+            echo "            <li><a href=\"";
+            echo $this->env->getExtension('routing')->getPath("gang_authority_user_profile");
+            echo "\" id=\"urlCompte\">Mon compte</a></li>
             <li><div id=\"split_menu\"></div></li>
             <li><a href=\"";
-        // line 21
-        echo $this->env->getExtension('routing')->getPath("login");
-        echo "\" id=\"urlConnexion\">Connexion</a></li>
+            // line 22
+            echo $this->env->getExtension('routing')->getPath("logout");
+            echo "\" id=\"urlDeconnexion\">Deconnexion</a></li>
+            ";
+        } else {
+            // line 23
+            echo "         
+            <li><a href=\"";
+            // line 24
+            echo $this->env->getExtension('routing')->getPath("login");
+            echo "\" id=\"urlConnexion\">Connexion</a></li>
             <li><div id=\"split_menu\"></div></li>
             <li><a href=\"";
-        // line 23
-        echo $this->env->getExtension('routing')->getPath("logout");
-        echo "\" id=\"urlDeconnexion\">Deconnexion</a></li>
-        </ul>
+            // line 26
+            echo $this->env->getExtension('routing')->getPath("gang_authority_user_signup");
+            echo "\" id=\"urlInscription\">Inscription</a></li>         
+            ";
+        }
+        // line 28
+        echo "        </ul>
     </div>
 
     <div id=\"page\">           
         <div id=\"content\">
             ";
-        // line 29
+        // line 33
         $this->displayBlock('content', $context, $blocks);
-        // line 30
+        // line 34
         echo "        </div>
     </div>
     <div id=\"footer\">
@@ -96,7 +110,7 @@ class __TwigTemplate_1b0d820acefe0f8464134df0a6c6c2e1d1e9fdd1e08148b6d4d71008ae7
     {
     }
 
-    // line 29
+    // line 33
     public function block_content($context, array $blocks = array())
     {
         echo "bl";
@@ -114,6 +128,6 @@ class __TwigTemplate_1b0d820acefe0f8464134df0a6c6c2e1d1e9fdd1e08148b6d4d71008ae7
 
     public function getDebugInfo()
     {
-        return array (  100 => 29,  95 => 4,  80 => 30,  78 => 29,  69 => 23,  64 => 21,  59 => 19,  54 => 17,  49 => 15,  44 => 13,  39 => 11,  30 => 5,  26 => 4,  21 => 1,);
+        return array (  114 => 33,  109 => 4,  94 => 34,  92 => 33,  85 => 28,  80 => 26,  75 => 24,  72 => 23,  67 => 22,  61 => 20,  59 => 19,  54 => 17,  49 => 15,  44 => 13,  39 => 11,  30 => 5,  26 => 4,  21 => 1,  40 => 8,  37 => 7,  32 => 4,  29 => 3,);
     }
 }

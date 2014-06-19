@@ -45,5 +45,6 @@ security:
 
     access_control:
         - { path: ^/admin/voirSignalements, roles: ROLE_ADMIN }
-        - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/admin/voirBannir, roles: ROLE_ADMIN }
+        - { path: ^/admin/mission, roles: ROLE_ADMIN }
+        - { path: ^/profile, roles: ROLE_USER }

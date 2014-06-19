@@ -22,9 +22,9 @@ class Mission
     private $idmission;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
-     * @ORM\Column(name="dureeMission", type="date", nullable=false)
+     * @ORM\Column(name="dureeMission", type="integer", nullable=false)
      */
     private $dureemission;
 
