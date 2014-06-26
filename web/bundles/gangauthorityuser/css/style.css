@@ -8,8 +8,8 @@ body, html {
 	background-color: whitesmoke;
 }
 
-a {text-decoration: none;
-   color:whitesmoke;
+a {
+    text-decoration: none;
 }
 
 #main-menu {
@@ -97,103 +97,3 @@ a {text-decoration: none;
     margin-bottom: 0px;
     overflow: auto;
 }
-
-body, html {
-	padding:0;
-	margin:0;
-	height: 100%;
-	width:100%;
-	font-family: sans-serif;
-	background-color: whitesmoke;
-}
-
-a {text-decoration: none;
-   color:whitesmoke;
-}
-
-#main-menu {
-    background-color: #222222;
-    opacity: 0.95;
-    margin-top : -18%;
-    text-align: center;
-    border-bottom: 1px solid #2e2e2e ; 
-    border-top: 1px solid #2e2e2e;
-    font-family: copperplate gothic bold;
-    color:#1B5E55;
-}
-
-#split_menu{
-    background-color: white;
-    height: 30px;   
-    width: 2px;
-}
-
-#content-header {
-    background-color: #f4b84a;
-    color:#505050;
-    width:100%;
-}
-
-#content-header img{
-    width: 500px;
-    height: 500px;
-    margin-top: -5%;
-    margin-left:36%;
-}
-#page {
-    width:95%;
-    margin-bottom: 3%;
-    margin-left: 3%;
-    height: 100%;
-    position: relative;
-    z-index:1;
-    max-height : 3000px;
-    min-height : 640px;
-}
-
-#content {
-    background-color: #eeeeee;
-    padding:10px;
-    max-height : 3000px;
-    min-height : 640px;
-}
-
-#main-menu li {
-    display: inline-block;
-}
-
-#main-menu li a {
-    color:white;
-    padding:20px;
-    display: block;
-}
-#main-menu li a:hover {
-    background-color: white;
-    color:black;
-}
-
-#footer {
-    height:50px;
-    width: 100%;
-    background-color: #222222;
-    position: absolute;
-    text-align: center;
-    border-bottom: 1px solid #2e2e2e; 
-    border-top: 1px solid #2e2e2e;
-}
-
-#footer li {display: inline-block}
-
-#footer a {
-    color:white;
-}
-
-#corp_login{
-    width: 100%;
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    overflow: auto;
-}
-

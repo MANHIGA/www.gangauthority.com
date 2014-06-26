@@ -7,7 +7,14 @@
 {% endblock %}
 
 {% block content %}
-<table>
+<div style="float: left">
+Classement des plus respectés:
+<table style="border: 1px solid black">
+    <tr>
+        <th>Position</th>
+        <th>Pseudo</th>
+        <th>Pts d'autorité</th>
+    </tr>
 	{% for joueur in joueurspoints %}
 	<tr>
         <td>{{ loop.index }}</td>
@@ -16,20 +23,34 @@
     </tr>
     {% endfor %}
 </table>
+</div>
 
-<table>
+<div style="float: left">
+Classement des plus impitoyables
+<table style="border: 1px solid black">
+    <tr>
+        <th>Position</th>
+        <th>Pseudo</th>
+        <th>Nombre de victoires</th>
+    </tr>
 	{% for joueur in joueursnbtues %}
 	<tr>
-        <tr>
         <td>{{ loop.index }}</td>
         <td>{{ joueur.pseudo }}</td>
         <td>{{ joueur.nbtues }}</td>
     </tr>
-    </tr>
     {% endfor %}
 </table>
+</div>
 
-<table>
+<div style="float: left">
+Classement des invincibles
+<table style="border: 1px solid black">
+    <tr>
+        <th>Position</th>
+        <th>Pseudo</th>
+        <th>Nombre de défaites</th>
+    </tr>
 	{% for joueur in joueursnbmorts %}
 	<tr>
         <td>{{ loop.index }}</td>
@@ -38,14 +59,23 @@
     </tr>
     {% endfor %}
 </table>
+</div>
 
-<table>
+<div style="float: left">
+Cla$$ement des plus fortunés
+<table style="border: 1px solid black">
+    <tr>
+        <th>Position</th>
+        <th>Pseudo</th>
+        <th>Argent</th>
+    </tr>
 	{% for joueur in joueursargent %}
 	<tr>
         <td>{{ loop.index }}</td>
         <td>{{ joueur.pseudo }}</td>
-        <td>{{ joueur.argent }}</td>
+        <td>${{ joueur.argent }}</td>
     </tr>
     {% endfor %}
 </table>
+</div>
 {% endblock %}

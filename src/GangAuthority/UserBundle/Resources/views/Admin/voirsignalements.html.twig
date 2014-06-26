@@ -1,0 +1,28 @@
+{% extends 'GangAuthorityUserBundle:Admin:bas.html.twig' %}
+
+{% block title %}
+	Gang Authority - Voir Signalements Admin
+{% endblock %}
+
+{% block content %}
+<table style="border: 1px solid black">
+    <tr style ="border: 1px solid black">
+    <th>idSignalement</th>
+    <th>Justification</th>
+    <th>Date</th>
+    <th>idCompte</th>
+    <th>Action</th>
+    </tr>
+	{% for signalement in signalements %}
+	<tr style="border: 1px solid black">
+        <td>{{ signalement.idSignalement }}</td>
+        <td>{{ signalement.justification }}</td>
+        <td>{{ signalement.dateSignalement|date('d-m-Y') }}</td>
+        {% for concompte in signalement.concernercompte %}
+        	<td>{{ concompte.idCompte }}</td>
+            <td><a href="{{ path('gang_authority_admin_voirbannir', {'idsignalement': signalement.idSignalement, 'idcompte': concompte.idCompte}) }}" id="urlBannir">Bannir</a></td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
