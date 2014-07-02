@@ -17,6 +17,39 @@ class DefaultController extends Controller
     {
         return $this->render('GangAuthorityUserBundle:Default:index.html.twig');
     }
+    public function oubliMdpAction(Request $request)
+    {
+        $joueur = new Joueur();
+        $joueur->setPointautorite(0);
+        $joueur->setNbmorts(0);
+        $joueur->setNbtues(0);
+        $joueur->setArgent(0);
+        $joueur->setNomgang('-');
+
+        $form = $this->createFormBuilder($joueur)
+        ->add('pseudo', 'text')
+        ->add('save', 'submit')
+        ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isValid()){
+            $em = $this->getDoctrine()->getEntityManager();
+            $query = $em->createQuery('SELECT j FROM GangAuthorityUserBundle:Joueur j WHERE j.pseudo = :pseudo')->setParameter('pseudo', $joueur->getPseudo());
+            
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Récupération mot de passe')
+                ->setFrom('gangauthority@gmail.com')
+                ->setTo($query->getSingleResult()->getEmail())
+                ->setBody($query->getSingleResult()->getMdp());
+            $this->get('mailer')->send($message);
+            return $this->redirect($this->generateUrl('gang_authority_user_homepage'));
+        }
+
+        return $this->render('GangAuthorityUserBundle:Default:oublimdp.html.twig', array(
+            'form' => $form->createView(),
+            ));
+    }
     public function signupAction(Request $request)
     {
         $joueur = new Joueur();

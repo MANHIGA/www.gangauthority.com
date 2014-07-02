@@ -1,3 +1,4 @@
-app\cache
-app\logs
-app\cache\dev
+/app/cache/*
+/app/logs/*
+app/logs/dev.log
+app/logs/prod.log

@@ -57,6 +57,10 @@ class __TwigTemplate_f280cf2f0c496812893d9205f20be995170feadb5c6bef1b4659f269984
     <br />
     <input type=\"submit\" value=\"Connexion\" />
   </form>
+  <a href=\"";
+        // line 20
+        echo $this->env->getExtension('routing')->getPath("gang_authority_user_oubli");
+        echo "\"> Mot de passe oublié ?</a>
 
 ";
     }
@@ -73,6 +77,6 @@ class __TwigTemplate_f280cf2f0c496812893d9205f20be995170feadb5c6bef1b4659f269984
 
     public function getDebugInfo()
     {
-        return array (  52 => 13,  46 => 11,  43 => 9,  37 => 7,  34 => 6,  31 => 4,  28 => 3,);
+        return array (  62 => 20,  52 => 13,  46 => 11,  43 => 9,  37 => 7,  34 => 6,  31 => 4,  28 => 3,);
     }
 }

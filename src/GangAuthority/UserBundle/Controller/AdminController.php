@@ -51,7 +51,6 @@ class AdminController extends Controller
 
         $bannir = new Bannir();
         $bannir->setDatebannissement(new \DateTime('today'));
-        $bannir->setBannirsignalement($signalement);
         $bannir->setBannircompte($joueur);
         $bannir->setBanniradmin($admin);
 
@@ -66,6 +65,7 @@ class AdminController extends Controller
             // perform some action, such as saving the task to the database
             $em = $this->getDoctrine()->getManager();
             $em->persist($bannir);
+            $em->remove($this->getDoctrine()->getRepository('GangAuthorityUserBundle:Signalement')->find($idsignalement));
             $em->flush();
             return $this->redirect($this->generateUrl('gang_authority_admin'));
         }

@@ -169,6 +169,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::connexionAction',  '_route' => 'gang_authority_user_connexion',);
         }
 
+        // gang_authority_user_oubli
+        if ($pathinfo === '/oublimdp') {
+            return array (  '_controller' => 'GangAuthority\\UserBundle\\Controller\\DefaultController::oublimdpAction',  '_route' => 'gang_authority_user_oubli',);
+        }
+
         if (0 === strpos($pathinfo, '/admin')) {
             // gang_authority_admin_homepage
             if ($pathinfo === '/admin/index') {

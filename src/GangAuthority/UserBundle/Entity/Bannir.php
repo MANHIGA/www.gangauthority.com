@@ -27,18 +27,6 @@ class Bannir
     private $dureebannissement;
 
     /**
-     * @var \Signalement
-     *
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="Signalement")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Bannir_idSignalement", referencedColumnName="idSignalement")
-     * })
-     */
-    private $bannirsignalement;
-
-    /**
      * @var \Administrateur
      *
      * @ORM\Id

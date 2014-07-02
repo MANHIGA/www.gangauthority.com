@@ -16,6 +16,9 @@ gang_authority_user_profile:
 gang_authority_user_connexion:
     pattern: /connexion
     defaults: { _controller: GangAuthorityUserBundle:Default:connexion }
+gang_authority_user_oubli:
+    pattern: /oublimdp
+    defaults: { _controller: GangAuthorityUserBundle:Default:oublimdp }
 gang_authority_admin_homepage:
     pattern:  /admin/index
     defaults: { _controller: GangAuthorityUserBundle:Admin:index }
