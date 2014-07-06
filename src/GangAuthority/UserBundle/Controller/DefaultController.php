@@ -56,8 +56,7 @@ class DefaultController extends Controller
         $joueur->setPointautorite(0);
         $joueur->setNbmorts(0);
         $joueur->setNbtues(0);
-        $joueur->setArgent(0);
-        $joueur->setNomgang('-');
+        $joueur->setArgent(15000);
 
         $form = $this->createFormBuilder($joueur)
             ->add('pseudo', 'text')
@@ -70,6 +69,7 @@ class DefaultController extends Controller
 
         if ($form->isValid()) {
             // perform some action, such as saving the task to the database
+            $joueur->setNomgang($joueur->getPseudo() . "'s Gang");
             $em = $this->getDoctrine()->getManager();
             $em->persist($joueur);
             $em->flush();
