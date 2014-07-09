@@ -62,6 +62,7 @@ class DefaultController extends Controller
             ->add('pseudo', 'text')
             ->add('email', 'email')
             ->add('mdp', 'password')
+            ->add('nomgang', 'text')
             ->add('save', 'submit')
             ->getForm();
 
@@ -69,7 +70,6 @@ class DefaultController extends Controller
 
         if ($form->isValid()) {
             // perform some action, such as saving the task to the database
-            $joueur->setNomgang($joueur->getPseudo() . "'s Gang");
             $em = $this->getDoctrine()->getManager();
             $em->persist($joueur);
             $em->flush();

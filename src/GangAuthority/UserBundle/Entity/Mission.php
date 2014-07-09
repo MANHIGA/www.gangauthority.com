@@ -24,7 +24,7 @@ class Mission
     /**
      * @var integer
      *
-     * @ORM\Column(name="dureeMission", type="integer", nullable=false)
+     * @ORM\Column(name="dureeMission", type="integer", nullable=true)
      */
     private $dureemission;
 
@@ -52,7 +52,7 @@ class Mission
     /**
      * @var integer
      *
-     * @ORM\Column(name="tempsReapparitionBase", type="integer", nullable=false)
+     * @ORM\Column(name="tempsReapparitionBase", type="integer", nullable=true)
      */
     private $tempsreapparitionbase;
 
@@ -62,6 +62,20 @@ class Mission
      * @ORM\Column(name="nbMiniSbiresRequis", type="integer", nullable=false)
      */
     private $nbminisbiresrequis;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelleMission", type="string", nullable=false)
+     */
+    private $libellemission;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descriptionMission", type="string", nullable=false)
+     */
+    private $descriptionmission;
 
     /**
      * @var \Typesbire
@@ -88,6 +102,51 @@ class Mission
         $this->realisercompte = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    /**
+     * Get libellemission
+     *
+     * @return string 
+     */
+    public function getLibellemission()
+    {
+        return $this->libellemission;
+    }
+
+    /**
+     * Set libelle
+     *
+     * @param string $libelle
+     * @return Mission
+     */
+    public function setLibellemission($libelle)
+    {
+        $this->libellemission = $libelle;
+
+        return $this;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Mission
+     */
+    public function setDescriptionmission($description)
+    {
+        $this->descriptionmission = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get descriptionmission
+     *
+     * @return string 
+     */
+    public function getDescriptionmission()
+    {
+        return $this->descriptionmission;
+    }
 
     /**
      * Get idmission

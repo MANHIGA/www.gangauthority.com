@@ -78,14 +78,14 @@ class AdminController extends Controller
         $mission = new Mission();
 
         $form = $this->createFormBuilder($mission)
-            ->add('dureemission', 'integer')
             ->add('recompenseargent', 'integer')
             ->add('difficulte', 'choice', array(
                 'choices'   => array('Facile' => 'Facile', 'Moyen' => 'Moyen', 'Difficile' => 'Difficile')
                 ))
             ->add('recompensepointautorite', 'integer')
-            ->add('tempsreapparitionbase', 'integer')
             ->add('nbminisbiresrequis', 'integer')
+            ->add('libellemission', 'text')
+            ->add('descriptionmission', 'text')
             ->add('missiontypesbire', 'entity', array(
                 'class' => 'GangAuthorityUserBundle:Typesbire',
                 'property'  => 'libelletypesbire',

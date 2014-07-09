@@ -7,12 +7,14 @@
     <id name="idmission" type="integer" column="idMission">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="dureemission" type="integer" column="dureeMission" nullable="false"/>
+    <field name="dureemission" type="integer" column="dureeMission" nullable="true"/>
     <field name="recompenseargent" type="decimal" column="recompenseArgent" precision="15" scale="3" nullable="false"/>
     <field name="difficulte" type="string" column="difficulte" length="25" nullable="false"/>
     <field name="recompensepointautorite" type="integer" column="recompensePointAutorite" nullable="false"/>
-    <field name="tempsreapparitionbase" type="integer" column="tempsReapparitionBase" nullable="false"/>
+    <field name="tempsreapparitionbase" type="integer" column="tempsReapparitionBase" nullable="true"/>
     <field name="nbminisbiresrequis" type="integer" column="nbMiniSbiresRequis" nullable="false"/>
+    <field name="libellemission" type="string" column="libelleMission" nullable="false"/>
+    <field name="descriptionmission" type="string" column="descriptionMission" nullable="false"/>
     <many-to-one field="missiontypesbire" target-entity="Typesbire">
       <join-columns>
         <join-column name="Mission_idTypeSbire" referenced-column-name="idTypeSbire"/>
