@@ -110,7 +110,7 @@ class DefaultController extends Controller
     }
     public function telechargementAction()
     {
-        $fichier = "GangAuthority.zip";
+        $fichier = "Gang_Authority.rar";
         $chemin = "C:\wamp\www\www.gangauthority.com\web\bundles\gangauthorityuser\\"; // emplacement de votre fichier .pdf
          
         $response = new Response();
