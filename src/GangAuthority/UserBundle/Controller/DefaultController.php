@@ -56,7 +56,7 @@ class DefaultController extends Controller
         $joueur->setPointautorite(0);
         $joueur->setNbmorts(0);
         $joueur->setNbtues(0);
-        $joueur->setArgent(15000);
+        $joueur->setArgent(30000);
 
         $form = $this->createFormBuilder($joueur)
             ->add('pseudo', 'text')
@@ -110,7 +110,7 @@ class DefaultController extends Controller
     }
     public function telechargementAction()
     {
-        $fichier = "ga.sql";
+        $fichier = "GangAuthority.zip";
         $chemin = "C:\wamp\www\www.gangauthority.com\web\bundles\gangauthorityuser\\"; // emplacement de votre fichier .pdf
          
         $response = new Response();
